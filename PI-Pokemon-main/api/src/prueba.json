@@ -1,0 +1,14 @@
+{
+    "name": "Nanomon",
+    "hp": 25,
+    "attack": 30,
+    "defense": 40,
+    "speed": 5,
+    "height": 180,
+    "weight": 150,
+    "img": "https://i.blogs.es/9a5086/spheal/450_1000.png",
+    "types": [
+      "normal",
+      "fairy"
+    ]
+  }
