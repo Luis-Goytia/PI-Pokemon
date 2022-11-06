@@ -6,7 +6,7 @@ import {
   //GET_DETAIL_FROM_STATE,
   GET_NAME_POKEMON,
   //POST_POKEMON,
-  LOADING,
+  SET_LOADING,
   FILTER_BY_TYPE,
   FILTER_CREATED,
   ORDER_BY_NAME,
@@ -26,7 +26,7 @@ export function getAllPokemons() {
       });
     } catch (error) {
       return dispatch({
-        type: LOADING,
+        type: SET_LOADING,
         payload: false,
       });
     }
@@ -67,7 +67,7 @@ export function getNamePokemon(namePokemon) {
       });
     } catch (error) {
       return dispatch({
-        type: LOADING,
+        type: SET_LOADING,
         payload: false,
       });
     }
@@ -119,3 +119,4 @@ export function clearHome() {
     type: CLEAR_HOME,
   };
 }
+

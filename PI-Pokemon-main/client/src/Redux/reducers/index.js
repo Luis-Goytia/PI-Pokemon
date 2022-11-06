@@ -5,7 +5,7 @@ import {
   //GET_DETAIL_FROM_STATE,
   GET_NAME_POKEMON,
   POST_POKEMON,
-  LOADING,
+  SET_LOADING,
   FILTER_BY_TYPE,
   FILTER_CREATED,
   ORDER_BY_NAME,
@@ -56,10 +56,10 @@ export default function rootReducer(state = initialState, action) {
       return {
         ...state,
       };
-    case LOADING:
+    case SET_LOADING:
       return {
         ...state,
-        loading: true,
+        loading: action.payload,
       };
     case FILTER_BY_TYPE:
       const all_pokemons = [...state.allPokemons];
