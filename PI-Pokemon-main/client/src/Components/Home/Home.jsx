@@ -4,7 +4,7 @@ import { getPokemons, getTypes } from "../../Redux/actions";
 import Cards from "./Cards";
 import NavBar from "../NavBar/NavBar";
 import Pagination from "../Pagination/Pagination";
-import Loader from "../ToolComponents/Loader"
+import Loader from "../ToolComponents/Loader";
 import NotPokemons from "../ToolComponents/NotPokemons";
 import "./Home.css";
 
@@ -34,7 +34,7 @@ export default function Home() {
   const page = (e) => setCurrentPage(e);
   //console.log(currentCards);
 
-   if (pokemons.length > 0 && !loading) {
+  if (pokemons.length > 0 && !loading) {
     if (currentCards.length === 0) {
       return <NotPokemons />;
     }
@@ -55,8 +55,8 @@ export default function Home() {
   } else {
     return (
       <>
-        <Loader/>
+        <Loader />
       </>
     );
-  } 
+  }
 }
