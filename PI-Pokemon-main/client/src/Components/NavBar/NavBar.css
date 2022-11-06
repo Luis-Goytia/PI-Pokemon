@@ -1,0 +1,96 @@
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+    height: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 40px 80px;
+	transition: 0.3s;
+	z-index: 100;
+	/* background-image: linear-gradient(rgba(7, 18, 36, 0.2), rgb(7, 18, 36)), url("../../resources/trees.jpg"); */
+}
+
+/* .header::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	transition: 0.5s;
+	transition-delay: 0.3s;
+	z-index: -1;
+}
+ */
+.Link {
+	text-decoration: none;
+}
+.header .logo {
+	text-transform: uppercase;
+	font-weight: bold;
+	text-decoration: none;
+	color: white;
+	font-size: 1.8rem;
+	transition: 0.5s;
+	transition-delay: 0.3s;
+}
+
+.header ul {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.header ul li {
+	list-style: none;
+	margin: 0 10px;
+}
+
+.header ul li span {
+	padding: 5px 10px;
+	text-decoration: none;
+	font-size: 1.3rem;
+	color: white;
+	transition: 0.5s;
+	transition-delay: 0.3s;
+	background-color : rgba(25, 25, 25, 0.9);
+    border-radius : 30px;
+}
+
+/* Alternative NavBar */
+
+.Top-bar {
+	position: fixed;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 20px;
+	  display: flex;
+	  justify-content: flex-start;
+	  align-items: center;
+	  padding: 40px 80px;
+	  transition: 0.3s;
+	  z-index: 100;
+	  /* background-image: linear-gradient(rgba(7, 18, 36, 0.2), rgb(7, 18, 36)), url("../../resources/trees.jpg"); */
+  }
+   
+  .Top-button {
+	margin-top: 5px;
+	margin-left: 5px;
+	width: 12em;
+	border-radius: 30px;
+	border-style: solid;
+	background-color: rgba(25, 25, 25, 0.9);
+	color: white;
+	padding: 0.5em;
+	text-transform: uppercase;
+	text-align: center;
+	align-content: center;
+	font-weight: bold;
+	cursor: pointer;
+	border: none;
+  }
