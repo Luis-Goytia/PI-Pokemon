@@ -41,7 +41,7 @@ export default function Home() {
     return (
       <>
         <NavBar />
-       
+        <Filters page={page} />
         <Cards data={currentCards} />
         <div>
           <Pagination
