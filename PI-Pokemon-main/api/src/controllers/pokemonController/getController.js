@@ -7,7 +7,7 @@ module.exports = {
     try {
       let pokemonsUrl = [];
       let pokemonsAPI = [];
-      let url = `https://pokeapi.co/api/v2/pokemon`
+      let url = `https://pokeapi.co/api/v2/pokemon`;
 
       do {
         let dataFromAPI = await axios.get(url);
@@ -20,8 +20,6 @@ module.exports = {
         ];
         url = dataFromAPI.data.next;
       } while (url && pokemonsUrl.length < 39);
-
-      console.log("getAllPokemonsAPI 22:",pokemonsUrl);
 
       await Promise.all(pokemonsUrl).then((response) =>
         response.map((el) => {
@@ -83,29 +81,28 @@ module.exports = {
 
   getPokemonById: async (id) => {
     try {
+      console.log(id.includes("-"));
       if (id.includes("-")) {
         let pokemon = await Pokemon.findOne({
-          where: { id: { [Op.iLike]: "%" + id + "%" } },
+          where: { id: id },
           include: [Type],
         });
         if (pokemon) {
-          let pokemonDB = pokemon.map((pokemon) => {
-            let allTypes = pokemon.Types.map((type) => type.name).join(",");
-            return {
-              id: pokemon.id,
-              name: pokemon.name,
-              hp: pokemon.hp,
-              attack: pokemon.attack,
-              defense: pokemon.defense,
-              speed: pokemon.speed,
-              height: pokemon.height,
-              weight: pokemon.weight,
-              types: allTypes,
-              img: pokemon.img,
-            };
-          });
-          return pokemonDB;
+          let allTypes = pokemon.Types.map((type) => type.name);
+          return {
+            id: pokemon.id,
+            name: pokemon.name,
+            hp: pokemon.hp,
+            attack: pokemon.attack,
+            defense: pokemon.defense,
+            speed: pokemon.speed,
+            height: pokemon.height,
+            weight: pokemon.weight,
+            types: allTypes,
+            img: pokemon.img,
+          };
         }
+        return pokemon;
       } else {
         let dataFromAPI = await axios.get(
           `https://pokeapi.co/api/v2/pokemon/${id}`
@@ -139,6 +136,7 @@ module.exports = {
 
   getPokemonByName: async (name) => {
     try {
+      console.log(name);
       let pokemon = await Pokemon.findOne({
         where: { name: { [Op.iLike]: "%" + name + "%" } },
         include: [Type],
@@ -187,48 +185,4 @@ module.exports = {
       throw `Error ${error} in getAllPokemonsByName `;
     }
   },
-
-  getApiInfo: async () => {
-    //te devuelve el obj con atributos
-    const apiUrl = await axios.get(
-      "https://pokeapi.co/api/v2/pokemon?offset=0&limit=40"
-    );
-    //console.log(apiUrl);
-    // este tiene un array con los url de los pokemones
-    let pokemonesUrl = apiUrl.data.results.map((el) => el.url);
-    //console.log(pokemonesUrl);
-    let pokemonsAPI = [];
-
-    
-    await Promise.all(pokemonesUrl).then((response) =>
-      //obj de un pokemon
-      response.map(async(el) => {
-        //console.log(el);//"https://pokeapi.co/api/v2/pokemon/1/"
-        let dataPokeAPI= await axios.get(el)
-        let pokemon = dataPokeAPI.data;
-        let pokemonAPI = {
-          id: pokemon.id,
-          name: pokemon.name,
-          //  {todos atributos}.stats[0].base_stat = 45
-          hp: pokemon.stats[0].base_stat,
-          attack: pokemon.stats[1].base_stat,
-          defense: pokemon.stats[2].base_stat,
-          speed: pokemon.stats[5].base_stat,
-          height: pokemon.height,
-          weight: pokemon.weight,
-          //array de tipos
-          types: pokemon.types
-            ? pokemon.types.map((el) => el.type.name)
-            : "Unknown Type",
-          img: pokemon.sprites.front_default,
-        };
-        //console.log(pokemonAPI);
-        pokemonsAPI.push(pokemonAPI);
-        console.log(pokemonsAPI);
-      })
-    );
-    console.log(pokemonsAPI);
-    return pokemonsAPI;
-  },
-  //return apiInfo
 };

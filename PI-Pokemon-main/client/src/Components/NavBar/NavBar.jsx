@@ -15,7 +15,7 @@ export default function NavBar() {
         </Link>
         <Link className="Link" to={"/pokemons/create"}>
           <li>
-            <span>+</span>
+            <span>Created</span>
           </li>
         </Link>
         <Link className="Link" to={"/"}>

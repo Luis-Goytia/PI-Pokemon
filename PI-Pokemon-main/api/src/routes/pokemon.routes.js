@@ -71,19 +71,22 @@ router.post("/", async (req, res) => {
   )
     return res.status(500).send({ error: "Wrong data" });
 
-  //Verification in API  
+  //Verification si existe 
   const checkPokemon = async (name) => {
     try {
-      const pokemonAPI = await getPokemonByName(name);
-      //console.log("encontrado",pokemonAPI);
-      if (pokemonAPI)
-        return res.status(500).send("Pokemon already exists in API.");
+      const pokemon = await getPokemonByName(name);
+      console.log("encontrado",pokemon);
+      if (pokemon)
+        return "Pokemon already exists";
     } catch (error) {
-      console.log(error);
+      return null;
     }
   };
+
   let result = await checkPokemon(name);
-  if (result) return result;
+  if (result) {
+    return res.status(500).send(result);
+  }
   
   try {
     let pokemon = await postPokemon(
