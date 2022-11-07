@@ -7,9 +7,10 @@ module.exports = {
     try {
       let pokemonsUrl = [];
       let pokemonsAPI = [];
+      let url = `https://pokeapi.co/api/v2/pokemon`
 
       do {
-        let dataFromAPI = await axios.get(`https://pokeapi.co/api/v2/pokemon`);
+        let dataFromAPI = await axios.get(url);
         pokemonsUrl = [
           ...pokemonsUrl,
           ...dataFromAPI.data.results.map((poke) => {
@@ -20,7 +21,7 @@ module.exports = {
         url = dataFromAPI.data.next;
       } while (url && pokemonsUrl.length < 39);
 
-      //console.log("getAllPokemonsAPI 22:",pokemonsUrl);
+      console.log("getAllPokemonsAPI 22:",pokemonsUrl);
 
       await Promise.all(pokemonsUrl).then((response) =>
         response.map((el) => {
