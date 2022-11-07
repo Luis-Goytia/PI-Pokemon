@@ -36,7 +36,7 @@ module.exports = {
             types: pokemon.types
               ? pokemon.types.map((el) => el.type.name)
               : "Unknown Type",
-            img: pokemon.sprites.front_default,
+            img: pokemon.sprites.other.dream_world.front_default,
           };
 
           pokemonsAPI.push(pokemonAPI);
@@ -122,7 +122,7 @@ module.exports = {
             types: pokemon.types
               ? pokemon.types.map((el) => el.type.name)
               : "Unknown Type",
-            img: pokemon.sprites.front_default,
+            img: pokemon.sprites.other.dream_world.front_default,
           };
           console.log(pokemonAPI);
           return pokemonAPI;
@@ -175,7 +175,7 @@ module.exports = {
           types: pokemon.types
             ? pokemon.types.map((el) => el.type.name)
             : "Unknown Type",
-          img: pokemon.sprites.front_default,
+          img: pokemon.sprites.other.dream_world.front_default,
         };
         //console.log(pokemonAPI);
         return pokemonAPI;

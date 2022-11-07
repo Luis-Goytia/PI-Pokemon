@@ -73,11 +73,7 @@ export default function rootReducer(state = initialState, action) {
       if (action.payload === "Created") {
         filterSource = state.allPokemons.filter((el) => el.id.length > 6);
       }
-      if (action.payload === "Database") {
-        filterSource = state.allPokemons.filter(
-          (el) => el.id.toString().length <= 6
-        );
-      }
+      
       if (action.payload === "All") {
         filterSource = state.allPokemons;
       }

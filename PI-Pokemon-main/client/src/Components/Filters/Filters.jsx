@@ -49,7 +49,6 @@ export default function Filters({ page }) {
         <select className="selection" onChange={handleCreated}>
           <option value="All">All</option>
           <option value="Created">Created</option>
-          <option value="Database">Database</option>
         </select>
         <select className="selection" onChange={handleType}>
           <option value="All">All</option>

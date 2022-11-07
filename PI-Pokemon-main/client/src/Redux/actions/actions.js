@@ -50,12 +50,10 @@ export function getDetail(pokemonId) {
     dispatch(loading());
     try {
       const res = await axios.get(`/pokemons/${pokemonId}`);
-      return dispatch(
-        {
-          type: GET_DETAIL,
-          payload: res.data,
-        }
-      );
+      return dispatch({
+        type: GET_DETAIL,
+        payload: res.data,
+      });
     } catch (error) {
       console.log("NO TENGO EL DETAIL", error);
     }
@@ -67,12 +65,10 @@ export function getNamePokemon(namePokemon) {
     dispatch(loading());
     try {
       const res = await axios.get(`/pokemons?name=${namePokemon}`);
-      return dispatch(
-        {
-          type: GET_NAME_POKEMON,
-          payload: res.data,
-        },
-      );
+      return dispatch({
+        type: GET_NAME_POKEMON,
+        payload: res.data,
+      });
     } catch (error) {
       return dispatch({
         type: SET_LOADING,
@@ -84,8 +80,16 @@ export function getNamePokemon(namePokemon) {
 
 export function postPokemon(dataPokemon) {
   return async function (dispatch) {
-    const json = await axios.post("/pokemons", dataPokemon);
-    return json;
+    dispatch(loading());
+    try {
+      const json = await axios.post("/pokemons", dataPokemon);
+      return json;
+    } catch (error) {
+      return dispatch({
+        type: SET_LOADING,
+        payload: true,
+      });
+    }
   };
 }
 
