@@ -1,6 +1,6 @@
 import { React, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getPokemons, getTypes } from "../../Redux/actions";
+import { getAllPokemons, getTypes } from "../../Redux/actions/actions";
 import Cards from "./Cards";
 import NavBar from "../NavBar/NavBar";
 import Pagination from "../Pagination/Pagination";
@@ -19,7 +19,7 @@ export default function Home() {
   const [cardsPerPage] = useState(6);
 
   useEffect(() => {
-    if (pokemons.length < 1) dispatch(getPokemons());
+    if (pokemons.length < 1) dispatch(getAllPokemons());
   }, [dispatch, pokemons]);
 
   useEffect(() => {

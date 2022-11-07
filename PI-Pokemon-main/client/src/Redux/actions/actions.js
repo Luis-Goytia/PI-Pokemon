@@ -17,9 +17,10 @@ import {
 } from "../actions/actionsTypes";
 
 export function getAllPokemons() {
-  return function (dispatch) {
+  return async function (dispatch) {
+    dispatch(loading());
     try {
-      const res = axios.get("/pokemons");
+      const res = await axios.get("/pokemons");
       return dispatch({
         type: GET_ALL_POKEMONS,
         payload: res.data,
@@ -27,15 +28,16 @@ export function getAllPokemons() {
     } catch (error) {
       return dispatch({
         type: SET_LOADING,
-        payload: false,
+        payload: true,
       });
     }
   };
 }
 
 export function getTypes() {
-  return function (dispatch) {
-    const res = axios.get("/types");
+  return async function (dispatch) {
+    dispatch(loading());
+    const res = await axios.get("/types");
     return dispatch({
       type: GET_TYPES,
       payload: res.data,
@@ -44,13 +46,16 @@ export function getTypes() {
 }
 
 export function getDetail(pokemonId) {
-  return function (dispatch) {
+  return async function (dispatch) {
+    dispatch(loading());
     try {
-      const res = axios.get(`/pokemons/${pokemonId}`);
-      return dispatch({
-        type: GET_DETAIL,
-        payload: res.data,
-      });
+      const res = await axios.get(`/pokemons/${pokemonId}`);
+      return dispatch(
+        {
+          type: GET_DETAIL,
+          payload: res.data,
+        }
+      );
     } catch (error) {
       console.log("NO TENGO EL DETAIL", error);
     }
@@ -58,25 +63,28 @@ export function getDetail(pokemonId) {
 }
 
 export function getNamePokemon(namePokemon) {
-  return function (dispatch) {
+  return async function (dispatch) {
+    dispatch(loading());
     try {
-      const res = axios.get(`/pokemons?name=${namePokemon}`);
-      return dispatch({
-        type: GET_NAME_POKEMON,
-        payload: res.data,
-      });
+      const res = await axios.get(`/pokemons?name=${namePokemon}`);
+      return dispatch(
+        {
+          type: GET_NAME_POKEMON,
+          payload: res.data,
+        },
+      );
     } catch (error) {
       return dispatch({
         type: SET_LOADING,
-        payload: false,
+        payload: true,
       });
     }
   };
 }
 
 export function postPokemon(dataPokemon) {
-  return function (dispatch) {
-    const json = axios.post("/pokemons", dataPokemon);
+  return async function (dispatch) {
+    const json = await axios.post("/pokemons", dataPokemon);
     return json;
   };
 }
@@ -120,3 +128,8 @@ export function clearHome() {
   };
 }
 
+export function loading() {
+  return {
+    type: SET_LOADING,
+  };
+}
