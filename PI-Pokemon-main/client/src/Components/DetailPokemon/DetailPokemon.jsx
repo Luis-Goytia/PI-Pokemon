@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { Link, useParams, useHistory } from "react-router-dom";
+import { useParams} from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { clearDetail, getAllPokemons, getDetail } from "../../Redux/actions/actions";
+import { clearDetail, getDetail } from "../../Redux/actions/actions";
 import styles from "./DetailPokemon.module.css";
 import Loader from "../ToolComponents/Loader";
 import NavBar from "../NavBar/NavBar"
