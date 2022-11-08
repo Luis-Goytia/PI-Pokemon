@@ -15,14 +15,13 @@ export default function Home() {
   const types = useSelector((state) => state.types);
   const loading = useSelector((state) => state.loading);
   const [currentPage, setCurrentPage] = useState(1);
-  const [cardsPerPage] = useState(6);
+  const [cardsPerPage] = useState(12);
   const dispatch = useDispatch();
 
   useEffect(() => {
     if (allPokemons.length < 1) dispatch(getAllPokemons());
   }, [dispatch, allPokemons]);
-  
-  
+
   useEffect(() => {
     if (types.length < 1) dispatch(getTypes());
   }, [dispatch, types]);
@@ -31,7 +30,6 @@ export default function Home() {
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;
   const currentCards = pokemons.slice(indexOfFirstCard, indexOfLastCard);
   const page = (e) => setCurrentPage(e);
- 
 
   if (pokemons.length > 0 && !loading) {
     if (currentCards.length === 0) {
@@ -39,7 +37,7 @@ export default function Home() {
     }
 
     return (
-      <>
+      <div className="contHome">
         <NavBar />
         <Filters page={page} />
         <Cards data={currentCards} />
@@ -50,7 +48,7 @@ export default function Home() {
             page={page}
           />
         </div>
-      </>
+      </div>
     );
   } else {
     return (

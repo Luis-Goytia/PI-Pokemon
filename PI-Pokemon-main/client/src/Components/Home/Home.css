@@ -12,21 +12,25 @@
 }
 
 .pagination-button {
-    padding: 12px;
-    margin: 4px;
-    margin-right: 10px;
-    border-radius: 0.4rem;
+    padding: 13px;
+    margin: 15px;
+    margin-right: 15px;
+    border-radius: 50%;
     border-style: none;
     background-color: rgb(255, 0, 0);
-    color: rgb(0, 227, 53);
+    color: rgb(255, 255, 255);
     font-weight: bold;
     cursor: pointer;
 }
+
+
 .container {
+    width: 100%;
+    height: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: wrap; 
-    margin-top: 0em;
+    margin-top: 5em;
 }
 
 .Loader {

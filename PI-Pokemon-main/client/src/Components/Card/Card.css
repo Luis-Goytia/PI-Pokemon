@@ -1,4 +1,4 @@
-.contCard {
+.Card {
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   display: flex;
@@ -7,24 +7,31 @@
   align-items: center;
   min-height: 23rem;
   max-height: 23rem;
-  width: 16rem;
+  width: 23rem;
   justify-content: space-evenly;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
-  background-color: #fff;
+  background-color: rgb(254, 222, 222);
   min-width: 250px;
   margin: 0.5rem;
+  
 }
 
-.contCard .img {
-  max-width: 50%;
+.card_image img {
+  min-height: 8rem;
+  max-height: 13rem;
+  object-fit: cover;
+  cursor: pointer;
+  
+  
 }
 
-.name {
+.name {text-decoration: none;
   font-family: "Rubik", sans-serif;
   font-weight: 600;
   font-size: 1.7em;
   color: #66625c;
+  
 }
 
 .types {
@@ -46,14 +53,58 @@
   border-radius: 20px;
 }
 
-.contCard:hover {
+.Card:hover {
   transform: scale(1.03);
 }
+.card_image:hover {
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.20);
+}
 
-@media screen and (max-width: 600px) {
-  .contCard {
+@media screen and (max-width: 1000px) {
+  .Card {
     width: 200px;
     height: 300px;
     margin-bottom: 20px;
   }
+}
+
+.bug {
+  background-color: #9cb820;
+}
+
+.fire {
+  background-color: #f08030;
+}
+
+.grass {
+  background-color: #22c02a;
+}
+
+.poison {
+  background-color: #a040a0;
+}
+
+.water {
+  background-color: #6890f0;
+}
+
+.flying {
+  background-color: #9096f0;
+}
+
+.normal {
+  background-color: #a8a8a8;
+}
+
+.fairy {
+  background-color: #f09ad9;
+}
+
+.electric {
+  background-color: #c09643;
+}
+
+.ground {
+  background-color: #e0b668;
 }
