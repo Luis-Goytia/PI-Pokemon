@@ -7,10 +7,13 @@ import "./NavBar.css";
 export default function NavBar() {
   return (
     <div className="header">
-      <img src={logo} alt="Logo" className="img-logo" />
+      <Link className="Link" to={"/Home"}>
+        <img src={logo} alt="Logo" className="img-logo" />
+      </Link>
+
       <SearchBar />
       <ul>
-        <Link className="Link" to={"/pokemons"}>
+        <Link className="Link" to={"/Home"}>
           <li>
             <span>Home</span>
           </li>
