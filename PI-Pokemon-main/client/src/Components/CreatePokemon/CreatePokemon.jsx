@@ -7,15 +7,15 @@ import {
   postPokemon,
 } from "../../Redux/actions/actions";
 import { validate } from "./validators";
-import styles from "./Create.module.css"
-import ash from "../../resources/Images/ash.png"
-import izq from "../../resources/Images/chevron-left2.png"
-import poke from "../../resources/Images/poke.png"
-
+import styles from "./Create.module.css";
+import cipres from "../../resources/Images/Profesor_Cipres.png";
+import izq from "../../resources/Images/chevron-left2.png";
+import poke from "../../resources/Images/poke.png";
 
 export default function CreatePokemon() {
   const dispatch = useDispatch();
   const types = useSelector((state) => state.types);
+  let loading = useSelector((state) => state.loading);
   const history = useHistory();
   const [errors, setErrors] = useState({});
   const [input, setInput] = useState({
@@ -33,8 +33,8 @@ export default function CreatePokemon() {
   useEffect(() => {
     dispatch(getTypes());
   }, [dispatch]);
-  
-    useEffect(() => {
+
+  useEffect(() => {
     setErrors(
       validate({
         ...input,
@@ -42,9 +42,7 @@ export default function CreatePokemon() {
     );
   }, [input]);
 
-    let btnDisabled = Object.values(validate(input)).length > 0;
-   
-    
+  let btnDisabled = Object.values(validate(input)).length > 0;
 
   const handleChange = (e) => {
     setInput({
@@ -71,21 +69,26 @@ export default function CreatePokemon() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(postPokemon(input));
-    alert("Pokemon creado");
-    setInput({
-      name: "",
-      hp: "",
-      attack: "",
-      defense: "",
-      speed: "",
-      height: "",
-      weight: "",
-      img: "",
-      types: [],
-    });
-    history.push("/home");
-    dispatch(getAllPokemons());
+    try {
+      dispatch(postPokemon(input));
+      alert("Se creo con exito");
+      setInput({
+        name: "",
+        hp: "",
+        attack: "",
+        defense: "",
+        speed: "",
+        height: "",
+        weight: "",
+        img: "",
+        types: [],
+      });
+      history.push("/home");
+      dispatch(getAllPokemons());
+    } catch (error) {
+      alert('No se creo el pokemon, intenta de nuevo')
+      history.push("/pokemons/create");
+    }
   };
 
   const handleDeleteType = (e) => {
@@ -94,8 +97,7 @@ export default function CreatePokemon() {
       types: input.types.filter((t) => t !== e),
     });
   };
-    
-    console.log("input",input)
+
   return (
     <div>
       <div className={styles.navBar}>
@@ -106,7 +108,11 @@ export default function CreatePokemon() {
       </div>
       <div className={styles.contGral}>
         <div className={styles.cardCreate}>
-          <img src={ash} alt="ash" className={styles.ash} />
+          {input.img ? (
+            <img src={input.img} alt="ash" className={styles.img} />
+          ) : (
+            <img src={cipres} alt="cipres" className={styles.cipres} />
+          )}
           <div className={styles.redTitle}>
             <img src={poke} alt="poke" className={styles.poke}></img>
             <div className={styles.title}>Create your pokemon</div>

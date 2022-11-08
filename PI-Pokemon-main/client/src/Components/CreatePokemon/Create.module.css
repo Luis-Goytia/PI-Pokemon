@@ -19,14 +19,38 @@ ul {
   margin-top: 30px;
 }
 
-.ash {
+.cipres{
   height: 570px;
   position: absolute;
-  right: -110px;
+  right: -280px;
+}
+
+.img {
+  height: 570px;
+  margin-top: 100px;
+  position: absolute;
+  right: -280px;
+  max-width: 18rem;
+  max-height: 18rem;
+  border-radius: 50%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .img {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .redTitle {
-  background-color: #eb544d;
+  background-color: rgb(255, 0, 0);
   width: 100%;
   height: 60px;
   display: flex;
@@ -102,16 +126,6 @@ ul {
   font-family: "Rubik", sans-serif;
 }
 
-.deleteButton {
-  border-radius: 10px;
-  border: none;
-  background-color: #eb544d;
-  color: #fff;
-  cursor: pointer;
-  font-weight: 700;
-  font-size: 12px;
-}
-
 .types {
   display: flex;
   list-style: none;
@@ -152,7 +166,7 @@ ul {
 }
 
 .navBar {
-  background-color: #eb544d;
+  background-color:rgb(255, 0, 0);
   height: 50px;
   display: flex;
   align-items: center;
