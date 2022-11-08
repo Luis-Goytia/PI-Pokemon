@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { clearDetail, getAllPokemons, getDetail } from "../../Redux/actions/actions";
 import styles from "./DetailPokemon.module.css";
 import Loader from "../ToolComponents/Loader";
+import NavBar from "../NavBar/NavBar"
 
 export default function DetailPokemon() {
     const { id } = useParams();
@@ -18,7 +19,8 @@ export default function DetailPokemon() {
     if (pokemonDetail.name) {
       console.log(pokemonDetail);
     return (
-      <div>
+        <div>
+            <NavBar/>
         <div className={styles.container}>
           <img src={pokemonDetail.img} alt="img-poke" className={styles.img}/>
           <div className={styles.container_data}>
