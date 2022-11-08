@@ -1,45 +1,16 @@
 .background {
   /* background-image: url(./Images/back.jpg); */
-  background-color: #fff;
+  background-image: url("../../resources/Images/background.jpg");
   background-size: cover;
   background-position: center;
   height: 100vh;
-  background-repeat: no-repeat;
-  display: flex;
-  justify-content: space-between;
-  padding-left: 2rem;
 }
 
-.contIzq {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 1rem;
-}
-
-.contTitle {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.contDer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #eb544d;
-  border-radius: 100% 0% 0% 100%;
-  box-shadow: 0px 0px 3px 9px rgba(0, 0, 0, 0.1);
-}
 
 .logo {
+  margin-top: 100px;
   width: 30%;
   filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.4));
-}
-
-.charizardImg {
-  min-height: 80%;
-  filter: drop-shadow(0px 3px 4px rgba(141, 0, 0, 10));
 }
 
 .title {
@@ -47,6 +18,7 @@
   font-weight: 700;
   font-family: "Rubik", sans-serif;
   color: #66625c;
+
 }
 
 .button {
@@ -64,36 +36,4 @@
   color: rgb(255, 255, 255);
   background-color: #e93228;
   border: none;
-}
-.parrafo {
-  font-family: "Rubik", sans-serif;
-  font-weight: 300;
-  font-size: clamp(1.3rem, 0.5rem + 5vw, 1.3rem);
-}
-
-.linkedin {
-  max-height: 30px;
-  background-color: #868686;
-  border-radius: 100%;
-  padding: 8px;
-}
-
-.linkedin:hover {
-  background-color: #66625c;
-}
-
-.github {
-  max-height: 30px;
-  background-color: #868686;
-  border-radius: 100%;
-  padding: 8px;
-  margin-left: 10px;
-}
-
-.github:hover {
-  background-color: #66625c;
-}
-
-.links {
-  display: flex;
 }
