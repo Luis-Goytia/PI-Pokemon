@@ -2,7 +2,7 @@ import { React, useEffect } from "react";
 import {  useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import NavBar from "../NavBar/NavBar";
-import { getNamePokemon } from "../../Redux/actions/actions";
+import { getAllPokemons, getNamePokemon } from "../../Redux/actions/actions";
 import Cards from "../Home/Cards";
 
 export default function SearchPokemon() { 
@@ -13,7 +13,11 @@ export default function SearchPokemon() {
   
   useEffect(() => {
     if (name) dispatch(getNamePokemon(name));
-  }, [dispatch, name]);
+    return () => {
+      dispatch(getAllPokemons())
+    }
+  }, [dispatch, name])
+  
 
   return (
     <>

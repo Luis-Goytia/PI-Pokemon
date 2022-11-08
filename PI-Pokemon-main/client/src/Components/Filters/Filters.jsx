@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   clearHome,
   filterByType,
   filterCreated,
+  getTypes,
   orderByAttack,
   orderByName,
 } from "../../Redux/actions/actions";
@@ -11,7 +12,11 @@ import "./Filters.css"
 
 export default function Filters({ page }) {
   const types = useSelector((state) => state.types);
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+    if (types.length < 1) dispatch(getTypes());
+  }, [dispatch, types]);
     
 
   function handleType(e) {
