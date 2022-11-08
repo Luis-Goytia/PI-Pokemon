@@ -119,7 +119,7 @@ export default function CreatePokemon() {
 
           <form onSubmit={(e) => handleSubmit(e)}>
             <div className={styles.form}>
-              <div className={styles.izq}>
+              <div className={styles.left}>
                 <div>
                   <div>Name:</div>
                   <input
@@ -222,7 +222,7 @@ export default function CreatePokemon() {
                 </div>
               </div>
 
-              <div className={styles.der}>
+              <div className={styles.rigth}>
                 <div>
                   <div>Speed:</div>
                   <input
