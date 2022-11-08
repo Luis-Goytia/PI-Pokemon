@@ -15,7 +15,6 @@ import poke from "../../resources/Images/poke.png";
 export default function CreatePokemon() {
   const dispatch = useDispatch();
   const types = useSelector((state) => state.types);
-  let loading = useSelector((state) => state.loading);
   const history = useHistory();
   const [errors, setErrors] = useState({});
   const [input, setInput] = useState({
