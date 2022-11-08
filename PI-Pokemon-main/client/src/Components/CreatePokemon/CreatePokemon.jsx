@@ -131,7 +131,7 @@ export default function CreatePokemon() {
                 </div>
 
                 <div>
-                  <div>Hppp:</div>
+                  <div>Hp:</div>
                   <input
                     type="number"
                     value={input.hp}

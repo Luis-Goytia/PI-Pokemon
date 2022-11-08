@@ -20,7 +20,7 @@ export default function NotPokemons(){
         <div className="option-buttons">
         <button id="back" /* onClick={HandleReset} */>Go back!</button>
         <Link to={"/pokemons/create" }>
-        <button id="create">Create Videogame!</button>
+        <button id="create">Create Pokemon!</button>
         </Link>
         </div>
         </div>

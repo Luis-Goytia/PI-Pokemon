@@ -20,9 +20,9 @@ export default function NavBar() {
             <span>Created</span>
           </li>
         </Link>
-        <Link className="Link" to={"/"}>
+        <Link className="Link" to={"/landingpage"}>
           <li>
-            <span>X</span>
+            <span>Exit</span>
           </li>
         </Link>
       </ul>

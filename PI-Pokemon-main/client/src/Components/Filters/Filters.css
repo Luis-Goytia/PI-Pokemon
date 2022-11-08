@@ -1,0 +1,38 @@
+.filters {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #0D172600;
+    color: rgb(0, 0, 0);
+    padding: .5rem 2rem .5rem 2rem;
+    margin-top: 1em;
+    font-size: .8rem;
+    margin-bottom: 0em;
+}
+.button-clear{
+    width: 12em;
+    border-radius: 30px;
+    border-style: solid;
+    background-color: rgba(25, 25, 25, 0.9);
+    color: white;
+    padding: 0.5em;
+    text-transform: uppercase;
+    text-align: center;
+    align-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+}
+.selection {
+    width: auto;
+    background-color: rgba(25, 25, 25, 0.9);
+    color: rgb(255, 255, 255);
+    border-radius: 30px;
+    border-style: none;
+    margin-top: .3rem;
+    margin-left: 1rem;
+    padding: 0.5em;
+    font-size: .8rem;
+    cursor: pointer;
+}

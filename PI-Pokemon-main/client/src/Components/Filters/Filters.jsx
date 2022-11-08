@@ -7,6 +7,7 @@ import {
   orderByAttack,
   orderByName,
 } from "../../Redux/actions/actions";
+import "./Filters.css"
 
 export default function Filters({ page }) {
   const types = useSelector((state) => state.types);

@@ -42,7 +42,6 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         detail: action.payload,
       };
-    //case GET_DETAIL_FROM_STATE:
 
     case GET_NAME_POKEMON:
       return {

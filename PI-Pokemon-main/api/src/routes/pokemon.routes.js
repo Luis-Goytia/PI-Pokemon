@@ -42,8 +42,9 @@ router.get("/:id", async (req, res) => {
   try {
     if (id) {
       const pokemon = await getPokemonById(id);
-      console.log("En route", pokemon);
+      
       if (pokemon) {
+        console.log("En route", pokemon);
         return res.status(202).send(pokemon);
       } else {
         return res.status(404).send(`No existe el pokemon con id= ${id}`);
