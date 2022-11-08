@@ -31,7 +31,7 @@ export default function DetailPokemon() {
               <ul className={styles.types}>
                 {pokemonDetail.types.map((t) => (
                   <div key={pokemonDetail.name + t} className={t}>
-                    {t}
+                    {t.toUpperCase()}
                   </div>
                 ))}
               </ul>

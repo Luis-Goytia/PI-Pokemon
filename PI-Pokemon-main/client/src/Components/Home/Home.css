@@ -59,7 +59,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 .notfund-loader button {
     margin-top: 5px;
@@ -68,7 +68,7 @@
     border-radius: 30px;
     border-style: solid;
     background-color: rgba(25, 25, 25, 0.9);
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 0.5em;
     text-transform: uppercase;
     text-align: center;
