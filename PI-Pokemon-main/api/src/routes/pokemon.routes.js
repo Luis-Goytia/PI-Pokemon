@@ -7,7 +7,7 @@ const {
 } = require("../controllers/pokemonController/getController");
 const {
   postPokemon,
-} = require("../controllers/pokemonController/postCOntroller");
+} = require("../controllers/pokemonController/postController");
 
 const router = Router();
 
