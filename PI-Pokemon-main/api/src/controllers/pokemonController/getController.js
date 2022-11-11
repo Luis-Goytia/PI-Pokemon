@@ -19,7 +19,7 @@ module.exports = {
           }),
         ];
         url = dataFromAPI.data.next;
-      } while (url && pokemonsUrl.length < 39);
+      } while (url && pokemonsUrl.length < 150);
 
       await Promise.all(pokemonsUrl).then((response) =>
         response.map((el) => {
