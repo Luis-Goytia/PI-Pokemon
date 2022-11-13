@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5d88e4be.chunk.css",
+    "main.js": "/static/js/main.8bf9b659.chunk.js",
+    "main.js.map": "/static/js/main.8bf9b659.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.a505e06a.js",
+    "runtime-main.js.map": "/static/js/runtime-main.a505e06a.js.map",
+    "static/js/2.c2d459bd.chunk.js": "/static/js/2.c2d459bd.chunk.js",
+    "static/js/2.c2d459bd.chunk.js.map": "/static/js/2.c2d459bd.chunk.js.map",
+    "static/js/3.33825efd.chunk.js": "/static/js/3.33825efd.chunk.js",
+    "static/js/3.33825efd.chunk.js.map": "/static/js/3.33825efd.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.5d88e4be.chunk.css.map": "/static/css/main.5d88e4be.chunk.css.map",
+    "static/js/2.c2d459bd.chunk.js.LICENSE.txt": "/static/js/2.c2d459bd.chunk.js.LICENSE.txt",
+    "static/media/Profesor_Cipres.9f1eb34e.png": "/static/media/Profesor_Cipres.9f1eb34e.png",
+    "static/media/LandingPage.module.css": "/static/media/background.d79f0265.jpg",
+    "static/media/dino.417627f2.gif": "/static/media/dino.417627f2.gif",
+    "static/media/gastly.0dc68f7d.gif": "/static/media/gastly.0dc68f7d.gif",
+    "static/media/pokemon.a3965bcd.png": "/static/media/pokemon.a3965bcd.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a505e06a.js",
+    "static/js/2.c2d459bd.chunk.js",
+    "static/css/main.5d88e4be.chunk.css",
+    "static/js/main.8bf9b659.chunk.js"
+  ]
+}
