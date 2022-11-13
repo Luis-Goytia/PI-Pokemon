@@ -4,13 +4,14 @@ import {
   clearHome,
   filterByType,
   filterCreated,
+  getAllPokemons,
   getTypes,
   orderByAttack,
   orderByName,
 } from "../../Redux/actions/actions";
 import "./Filters.css"
 
-export default function Filters({ page }) {
+export default function Filters() {
   const types = useSelector((state) => state.types);
   const dispatch = useDispatch();
   
@@ -22,28 +23,30 @@ export default function Filters({ page }) {
   function handleType(e) {
     dispatch(filterByType(e.target.value));
     e.preventDefault();
-    page(1);
+ 
   }
   function handleCreated(e) {
     e.preventDefault();
     dispatch(filterCreated(e.target.value));
-    page(1);
+   
   }
   function handleName(e) {
     e.preventDefault();
     dispatch(orderByName(e.target.value));
-    //page(1)
+    
   }
   function handleAttack(e) {
     e.preventDefault();
 
     dispatch(orderByAttack(e.target.value));
-    //page(1)
+    
   }
   function handleClear(e) {
     e.preventDefault();
+    dispatch(getAllPokemons())
     dispatch(clearHome());
   }
+
 
   return (
     <div className="filters">
@@ -76,6 +79,7 @@ export default function Filters({ page }) {
           <option value="Higher">Higher</option>
         </select>
       </div>
+      
     </div>
   );
 }

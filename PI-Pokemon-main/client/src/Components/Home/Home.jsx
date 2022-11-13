@@ -25,16 +25,22 @@ export default function Home() {
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;
   const currentCards = pokemons.slice(indexOfFirstCard, indexOfLastCard);
   const page = (e) => setCurrentPage(e);
- 
-  if (pokemons.length > 0 && !loading) {
-    if (currentCards.length === 0) {
-      return <NotPokemons />;
+
+  if (allPokemons.length > 0 && !loading) {
+    if (pokemons.length === 0) {
+      return (
+        <>
+          <NavBar />
+          <Filters />
+          <NotPokemons />
+        </>
+      );
     }
 
     return (
       <div className="contHome">
         <NavBar />
-        <Filters page={page} />
+        <Filters />
         <Cards data={currentCards} />
         <div>
           <Pagination

@@ -14,6 +14,7 @@ import {
   //RESET_POKEMONS,
   CLEAR_DETAIL,
   CLEAR_HOME,
+  PESO,
 } from "../actions/actionsTypes";
 
 export function getAllPokemons() {
@@ -136,4 +137,10 @@ export function loading() {
   return {
     type: SET_LOADING,
   };
+}
+
+export function filterWeight(){
+  return{
+    type: PESO,
+  }
 }

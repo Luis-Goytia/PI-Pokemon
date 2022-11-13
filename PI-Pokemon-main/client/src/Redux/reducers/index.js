@@ -13,6 +13,7 @@ import {
   //RESET_POKEMONS,
   CLEAR_DETAIL,
   CLEAR_HOME,
+  PESO,
 } from "../actions/actionsTypes";
 
 const initialState = {
@@ -20,6 +21,7 @@ const initialState = {
   allPokemons: [],
   types: [],
   detail: [],
+  pokemonsDb:[],
   loading: true,
 };
 
@@ -30,6 +32,8 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         pokemons: action.payload,
         allPokemons: action.payload,
+        pokemonsDb:action.payload.filter((el) => el.id.length > 6)
+
       };
 
     case GET_TYPES:
@@ -97,10 +101,10 @@ export default function rootReducer(state = initialState, action) {
       if (action.payload === "Z-A") {
         filterName = [...state.allPokemons].sort((a, b) => {
           if (a.name.toLowerCase() > b.name.toLowerCase()) {
-            return 1;
+            return -1;
           }
           if (a.name.toLowerCase() < b.name.toLowerCase()) {
-            return -1;
+            return 1;
           }
           return 0;
         });
@@ -151,6 +155,14 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         pokemons: state.allPokemons,
       };
+
+    case PESO:
+      const allpokemons = [...state.allPokemons]
+      const peso = allpokemons.filter((el) => Number(el.weight) > 50)
+      return{
+        ...state,
+        pokemons:peso
+      }
     default:
       return { ...state };
   }

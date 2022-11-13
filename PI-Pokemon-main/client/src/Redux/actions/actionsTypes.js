@@ -12,4 +12,5 @@ export const ORDER_BY_ATTACK = "ORDER_BY_ATTACK";
 export const RESET_POKEMONS = "RESET_POKEMONS";
 export const CLEAR_DETAIL = "CLEAR_DETAIL";
 export const CLEAR_HOME = "CLEAR_HOME";
+export const PESO = "PESO";
 

@@ -8,7 +8,7 @@ export function containsSpecialChars(str) {
 
 export function validate(input) {
   let errors = {};
-  let isURL = /^https?:\/\/.*\/.*\.(png|gif|webp|jpeg|jpg)\??.*$/gim;
+  let isURL = /^https?:\/\/.*\/.*\.(png|gif|webp|jpeg|jpg|svg)\??.*$/gim;
 
   if (!input.name || input.name.length < 3) {
     errors.name = "Debe tener un nombre de mas de tres letras";
@@ -37,7 +37,7 @@ export function validate(input) {
   if (input.types.length === 0) {
     errors.types = "Debe tener por lo menos un tipo";
   }
-  if (!isURL.test(input.img)) {
+  if (!input.img) {
     return (errors.img = "No es una Url valida");
   }
 
