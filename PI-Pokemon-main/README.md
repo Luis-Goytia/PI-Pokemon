@@ -29,5 +29,5 @@
 
 📎Back End: 
 
-<img src="https://img.shields.io/badge/-Express.js-787878?style=flat">
-[![Alt text](https://img.youtube.com/vi/02FIgonq_90/0.jpg)](https://www.youtube.com/watch?v=02FIgonq_90)
+ <img src="https://img.shields.io/badge/-YOUTUBE-red">
+ https://youtu.be/02FIgonq_90
