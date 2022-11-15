@@ -27,7 +27,9 @@
 <img src="https://img.shields.io/badge/-Express.js-787878?style=flat"> <img src="https://img.shields.io/badge/-Node.js-3C873A?style=flat&logo=Node.js&logoColor=white">
 <img src="https://img.shields.io/badge/-PostgreSQL-31648C?style=flat&logo=postgresql&logoColor=FFFFFF"> <img src="https://img.shields.io/badge/-Sequelize-399AF3?style=flat&logo=sequelize&logoColor=FFFFFF">
 
-📎Back End: 
-
+📎Youtube: 
+<https://youtu.be/02FIgonq_90>
  <img src="https://img.shields.io/badge/-YOUTUBE-red">
- https://youtu.be/02FIgonq_90
+ 
+ 
+ 
